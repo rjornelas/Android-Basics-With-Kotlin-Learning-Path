@@ -7,23 +7,53 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/tvDiceRolled"
+        android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="36sp"
+        android:text="@string/tap_to_play"
+        android:textAlignment="center"
+        android:textSize="100sp"
+        android:textStyle="bold"
+        android:layout_marginTop="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivDiceRolled"
+        android:layout_width="200dp"
+        android:layout_height="160dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="1"/>
+        tools:srcCompat="@drawable/dice_1" />
 
     <Button
         android:id="@+id/btnRoll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#3C3C3C"
+        android:padding="8dp"
+        android:text="@string/roll"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDiceRolledResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/roll"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvDiceRolled" />
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/ivDiceRolled"
+        tools:text="rolled: 1" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
