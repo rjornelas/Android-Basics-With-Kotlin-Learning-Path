@@ -11,20 +11,24 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var ivDiceRolled: ImageView
     private lateinit var tvDiceRolled: TextView
+    private lateinit var tvTitle: TextView
+    private lateinit var btnRoll: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        val btnRoll: Button = findViewById(R.id.btnRoll)
-        ivDiceRolled = findViewById(R.id.ivDiceRolled)
-        tvDiceRolled = findViewById(R.id.tvDiceRolledResult)
-
+        initUi()
         btnRoll.setOnClickListener {
-            val tvTitle: TextView = findViewById(R.id.tvTitle)
             tvTitle.text = ""
             rollDice()
         }
+    }
+
+    private fun initUi() {
+        btnRoll = findViewById(R.id.btnRoll)
+        ivDiceRolled = findViewById(R.id.ivDiceRolled)
+        tvDiceRolled = findViewById(R.id.tvDiceRolledResult)
+        tvTitle = findViewById(R.id.tvTitle)
     }
 
     private fun rollDice() {
